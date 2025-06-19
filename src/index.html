@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Forecast Application</title>
+    <link href="./output.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+      <h1 class="bg-blue-600 text-center text-white text-3xl font-bold py-4">
+        Weather Dashboard
+      </h1>
+    </header>
+    <main class="flex w-screen bg-blue-200">
+      <section class="w-[30%] m-[4%] flex flex-col justify-center gap-4">
+        <h2 class="text-xl">Enter a City Name</h2>
+
+        <input
+          class="w-full bg-white p-2 rounded-xs"
+          type="text"
+          placeholder="E.g.,London, New York, Tokyo"
+        />
+
+        <button class="bg-blue-600 p-2 rounded-xs text-white">Search</button>
+        <div class="flex items-center gap-2 justify-center">
+          <hr class="grow-1 h-0.5 bg-gray-500 border-0" />
+          <span class="text-xl text-gray-500">or</span>
+          <hr class="grow-1 h-0.5 bg-gray-500 border-0" />
+        </div>
+
+        <button class="bg-gray-500 p-2 rounded-xs text-white">
+          Use Current Location
+        </button>
+      </section>
+      <section class="w-[70%]"></section>
+    </main>
+
+    <!-- <main>
+      <section class="search-section">
+        <form class="search-container">
+          <input
+            type="text"
+            placeholder="Enter a City Name"
+            aria-label="City name"
+          />
+          <button type="submit">Search</button>
+        </form>
+        <p>E.g., New York, London, Tokyo</p>
+      </section>
+
+      <section class="current-weather">
+        <h2>London (2024-04-23)</h2>
+        <div>
+          <p>Temp: 2.0 x 1.5°C</p>
+          <p>Wind: 2.0 x 3.0°</p>
+          <p>Tuesday, 8th</p>
+          <p>Light Rain</p>
+        </div>
+      </section>
+
+      <section class="forecast">
+        <h2>5 Day Forecast</h2>
+        <div class="forecast-container">
+          <article class="forecast-day">
+            <h3>2024-04-24</h3>
+            <p>Temp: 6.0°C</p>
+            <p>Wind: 2.7 x 6.0°</p>
+            <p>Monday, 9th</p>
+          </article>
+
+          <article class="forecast-day">
+            <h3>2024-04-25</h3>
+            <p>Temp: 6.5°C</p>
+            <p>Wind: 7.4 x 8.0°</p>
+            <p>Monday, 9th</p>
+          </article>
+
+          <article class="forecast-day">
+            <h3>2024-04-26</h3>
+            <p>Temp: 7.4°C</p>
+            <p>Wind: 10 x 10°</p>
+            <p>Monday, 9th</p>
+          </article>
+
+          <article class="forecast-day">
+            <h3>2024-04-27</h3>
+            <p>Temp: 10°C</p>
+            <p>Wind: 2.7 x 7.0°</p>
+            <p>Monday, 9th</p>
+          </article>
+
+          <article class="forecast-day">
+            <h3>2024-04-28</h3>
+            <p>Temp: 8.4°C</p>
+            <p>Wind: 4.3 x 5.0°</p>
+            <p>Monday, 9th</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Weather data provided by <a href="#">Weather API</a></p>
+    </footer> -->
+  </body>
+</html>
