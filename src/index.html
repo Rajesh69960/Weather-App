@@ -5,103 +5,146 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather Forecast Application</title>
     <link href="./output.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="input.js" defer></script>
   </head>
-  <body>
+  <body class="w-screen flex flex-col min-h-screen">
+    <!-- Header -->
     <header>
-      <h1 class="bg-blue-600 text-center text-white text-3xl font-bold py-4">
+      <h1 class="bg-blue-600 text-center text-white text-4xl font-bold py-3">
         Weather Dashboard
       </h1>
     </header>
-    <main class="flex w-screen bg-blue-200">
-      <section class="w-[30%] m-[4%] flex flex-col justify-center gap-4">
-        <h2 class="text-xl">Enter a City Name</h2>
+    <!-- Main section -->
+    <main class="flex bg-blue-200 py-8 flex-1">
+      <!-- Left Section -->
+      <section class="w-[24%] mx-[3%] flex flex-col gap-4">
+        <h2 class="text-2xl font-bold">Enter a City Name</h2>
 
         <input
-          class="w-full bg-white p-2 rounded-xs"
+          id="searchInput"
+          class="w-full text-xl bg-white p-4 rounded-md"
           type="text"
           placeholder="E.g.,London, New York, Tokyo"
         />
 
-        <button class="bg-blue-600 p-2 rounded-xs text-white">Search</button>
+        <button class="bg-blue-600 p-4 rounded-md text-xl text-white">
+          Search
+        </button>
         <div class="flex items-center gap-2 justify-center">
           <hr class="grow-1 h-0.5 bg-gray-500 border-0" />
           <span class="text-xl text-gray-500">or</span>
           <hr class="grow-1 h-0.5 bg-gray-500 border-0" />
         </div>
 
-        <button class="bg-gray-500 p-2 rounded-xs text-white">
+        <button class="bg-gray-500 p-4 rounded-md text-white text-xl">
           Use Current Location
         </button>
       </section>
-      <section class="w-[70%]"></section>
+      <!-- Right section  -->
+      <section class="w-[64%] mx-[3%] flex flex-col gap-6">
+        <!-- City Whether Deatils -->
+        <article
+          class="bg-blue-600 rounded-md p-8 flex justify-between text-white"
+        >
+          <section class="flex flex-col gap-4">
+            <h1 class="text-3xl font-bold">
+              <span id="cityName"></span>
+              <span id="localtime">(2024-04-23)</span>
+            </h1>
+            <p class="text-xl"><span id="temperature"></span>&deg;C</p>
+            <p id="wind" class="text-xl"></p>
+            <p id="humidity" class="text-xl"></p>
+          </section>
+          <section class="">
+            <div class="flex flex-col items-center gap-4">
+              <img
+                class="w-30"
+                src="../images/rain_6206031.png"
+                alt="weather-iamge"
+              />
+              <p class="text-xl">Light Rain</p>
+            </div>
+          </section>
+        </article>
+        <!-- 5 day ForeCast -->
+        <article class="flex flex-col gap-6">
+          <h1 class="text-3xl font-bold">5-Day Forecast</h1>
+          <section class="text-white mt-4 text-xl flex gap-6 overflow-x-auto">
+            <article
+              class="bg-gray-600 w-44 rounded text-left p-4 flex flex-col gap-4 flex-shrink-0"
+            >
+              <div class="flex flex-col gap-4">
+                <h3>(2024-04-24)</h3>
+                <i class="text-2xl pl-4 fa-solid fa-cloud"></i>
+              </div>
+              <div class="flex flex-col gap-2">
+                <p>Temp: 6.0°C</p>
+                <p>Wind: 2.7 x 6.0°</p>
+                <p>Monday, 9th</p>
+              </div>
+            </article>
+            <article
+              class="bg-gray-600 w-44 rounded text-left p-4 flex flex-col gap-4 flex-shrink-0"
+            >
+              <div class="flex flex-col gap-4">
+                <h3>(2024-04-24)</h3>
+                <i class="text-2xl pl-4 fa-solid fa-cloud"></i>
+              </div>
+              <div class="flex flex-col gap-2">
+                <p>Temp: 6.0°C</p>
+                <p>Wind: 2.7 x 6.0°</p>
+                <p>Monday, 9th</p>
+              </div>
+            </article>
+            <article
+              class="bg-gray-600 w-44 rounded text-left p-4 flex flex-col gap-4 flex-shrink-0"
+            >
+              <div class="flex flex-col gap-4">
+                <h3>(2024-04-24)</h3>
+                <i class="text-2xl pl-4 fa-solid fa-cloud"></i>
+              </div>
+              <div class="flex flex-col gap-2">
+                <p>Temp: 6.0°C</p>
+                <p>Wind: 2.7 x 6.0°</p>
+                <p>Monday, 9th</p>
+              </div>
+            </article>
+            <article
+              class="bg-gray-600 w-44 rounded text-left p-4 flex flex-col gap-4 flex-shrink-0"
+            >
+              <div class="flex flex-col gap-4">
+                <h3>(2024-04-24)</h3>
+                <i class="text-2xl pl-4 fa-solid fa-cloud"></i>
+              </div>
+              <div class="flex flex-col gap-2">
+                <p>Temp: 6.0°C</p>
+                <p>Wind: 2.7 x 6.0°</p>
+                <p>Monday, 9th</p>
+              </div>
+            </article>
+            <article
+              class="bg-gray-600 w-44 rounded text-left p-4 flex flex-col gap-4 flex-shrink-0"
+            >
+              <div class="flex flex-col gap-4">
+                <h3>(2024-04-24)</h3>
+                <i class="text-2xl pl-4 fa-solid fa-cloud"></i>
+              </div>
+              <div class="flex flex-col gap-2">
+                <p>Temp: 6.0°C</p>
+                <p>Wind: 2.7 x 6.0°</p>
+                <p>Monday, 9th</p>
+              </div>
+            </article>
+          </section>
+        </article>
+      </section>
     </main>
-
-    <!-- <main>
-      <section class="search-section">
-        <form class="search-container">
-          <input
-            type="text"
-            placeholder="Enter a City Name"
-            aria-label="City name"
-          />
-          <button type="submit">Search</button>
-        </form>
-        <p>E.g., New York, London, Tokyo</p>
-      </section>
-
-      <section class="current-weather">
-        <h2>London (2024-04-23)</h2>
-        <div>
-          <p>Temp: 2.0 x 1.5°C</p>
-          <p>Wind: 2.0 x 3.0°</p>
-          <p>Tuesday, 8th</p>
-          <p>Light Rain</p>
-        </div>
-      </section>
-
-      <section class="forecast">
-        <h2>5 Day Forecast</h2>
-        <div class="forecast-container">
-          <article class="forecast-day">
-            <h3>2024-04-24</h3>
-            <p>Temp: 6.0°C</p>
-            <p>Wind: 2.7 x 6.0°</p>
-            <p>Monday, 9th</p>
-          </article>
-
-          <article class="forecast-day">
-            <h3>2024-04-25</h3>
-            <p>Temp: 6.5°C</p>
-            <p>Wind: 7.4 x 8.0°</p>
-            <p>Monday, 9th</p>
-          </article>
-
-          <article class="forecast-day">
-            <h3>2024-04-26</h3>
-            <p>Temp: 7.4°C</p>
-            <p>Wind: 10 x 10°</p>
-            <p>Monday, 9th</p>
-          </article>
-
-          <article class="forecast-day">
-            <h3>2024-04-27</h3>
-            <p>Temp: 10°C</p>
-            <p>Wind: 2.7 x 7.0°</p>
-            <p>Monday, 9th</p>
-          </article>
-
-          <article class="forecast-day">
-            <h3>2024-04-28</h3>
-            <p>Temp: 8.4°C</p>
-            <p>Wind: 4.3 x 5.0°</p>
-            <p>Monday, 9th</p>
-          </article>
-        </div>
-      </section>
-    </main>
-
-    <footer>
-      <p>Weather data provided by <a href="#">Weather API</a></p>
-    </footer> -->
   </body>
 </html>
