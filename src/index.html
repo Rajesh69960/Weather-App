@@ -32,15 +32,17 @@
       <!-- Left Section -->
       <section class="w-4/5 flex flex-col gap-1.5 md:gap-3 lg:max-w-[32%]">
         <h2 class="text-xl font-bold md:text-2xl">Enter a City Name</h2>
-
+        <!-- search Input -->
         <input
           id="searchInput"
           class="w-full text-lg bg-white p-4 rounded-md md:text-xl"
           type="text"
           placeholder="E.g.,London, New York, Tokyo"
         />
+        <!-- error message -->
         <div id="message" class="text-red-600 mt-2"></div>
 
+        <!-- search button -->
         <button
           id="searchBtn"
           class="bg-blue-600 p-4 rounded-md text-lg text-white md:text-xl"
@@ -48,12 +50,14 @@
           Search
         </button>
 
+        <!-- divider "or" -->
+
         <div class="flex items-center gap-2 justify-center">
           <hr class="grow-1 h-0.5 bg-gray-500 border-0" />
           <span class="text-lg text-gray-500 md:text-xl">or</span>
           <hr class="grow-1 h-0.5 bg-gray-500 border-0" />
         </div>
-
+        <!-- current location button -->
         <button
           id="searchLocation"
           class="bg-gray-500 p-4 rounded-md text-white text-lg md:text-xl"
@@ -67,6 +71,7 @@
         <article
           class="bg-blue-600 rounded-md p-6 flex justify-between gap-4 text-white md:p-8"
         >
+          <!-- cityName and its weather details (temperature, wind and humidity) -->
           <section class="flex flex-col gap-4">
             <h1 class="text-2xl font-bold md:text-3xl">
               <span id="cityName"></span>
@@ -78,16 +83,16 @@
             <p id="wind" class="text-lg md:text-xl"></p>
             <p id="humidity" class="text-lg md:text-xl"></p>
           </section>
-          <section>
-            <div class="flex flex-col items-center gap-2 md:gap-4">
-              <img id="weatherImg" class="w-18 max-w-full md:w-24 lg:w-30" />
-              <p id="weatherText" class="text-lg md:text-xl"></p>
-            </div>
+          <!-- image and its description text based on the weather condition-->
+          <section class="flex flex-col items-center gap-2 md:gap-4">
+            <img id="weatherImg" class="w-18 max-w-full md:w-24 lg:w-30" />
+            <p id="weatherText" class="text-lg md:text-xl"></p>
           </section>
         </article>
         <!-- 5 day ForeCast -->
         <article class="flex flex-col gap-4 md:gap-8">
           <h1 class="text-2xl font-bold md:text-3xl">5-Day Forecast</h1>
+          <!-- cards to display the weather forcast for 5 days -->
           <section
             id="forecastContainer"
             class="text-white text-lg flex gap-4 overflow-x-auto md:gap-6 md:text-xl"
