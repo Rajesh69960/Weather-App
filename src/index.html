@@ -12,137 +12,86 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <script src="input.js" defer></script>
+    <script src="index.js" defer></script>
   </head>
-  <body class="w-screen flex flex-col min-h-screen">
+  <body
+    class="w-screen flex flex-col min-h-screen overflow-x-hidden bg-blue-200 lg:overflow-y-hidden"
+  >
     <!-- Header -->
     <header>
-      <h1 class="bg-blue-600 text-center text-white text-4xl font-bold py-3">
+      <h1
+        class="bg-blue-600 text-center text-white text-3xl font-bold py-3 md:text-4xl"
+      >
         Weather Dashboard
       </h1>
     </header>
     <!-- Main section -->
-    <main class="flex bg-blue-200 py-8 flex-1">
+    <main
+      class="w-screen flex flex-col gap-10 items-center py-8 lg:flex-row lg:items-stretch lg:px-[2%]"
+    >
       <!-- Left Section -->
-      <section class="w-[24%] mx-[3%] flex flex-col gap-4">
-        <h2 class="text-2xl font-bold">Enter a City Name</h2>
+      <section class="w-4/5 flex flex-col gap-1.5 md:gap-3 lg:max-w-[32%]">
+        <h2 class="text-xl font-bold md:text-2xl">Enter a City Name</h2>
 
         <input
           id="searchInput"
-          class="w-full text-xl bg-white p-4 rounded-md"
+          class="w-full text-lg bg-white p-4 rounded-md md:text-xl"
           type="text"
           placeholder="E.g.,London, New York, Tokyo"
         />
+        <div id="message" class="text-red-600 mt-2"></div>
 
-        <button class="bg-blue-600 p-4 rounded-md text-xl text-white">
+        <button
+          id="searchBtn"
+          class="bg-blue-600 p-4 rounded-md text-lg text-white md:text-xl"
+        >
           Search
         </button>
+
         <div class="flex items-center gap-2 justify-center">
           <hr class="grow-1 h-0.5 bg-gray-500 border-0" />
-          <span class="text-xl text-gray-500">or</span>
+          <span class="text-lg text-gray-500 md:text-xl">or</span>
           <hr class="grow-1 h-0.5 bg-gray-500 border-0" />
         </div>
 
-        <button class="bg-gray-500 p-4 rounded-md text-white text-xl">
+        <button
+          id="searchLocation"
+          class="bg-gray-500 p-4 rounded-md text-white text-lg md:text-xl"
+        >
           Use Current Location
         </button>
       </section>
       <!-- Right section  -->
-      <section class="w-[64%] mx-[3%] flex flex-col gap-6">
+      <section class="w-4/5 flex flex-col gap-4 md:gap-8 lg:max-w-[64%]">
         <!-- City Whether Deatils -->
         <article
-          class="bg-blue-600 rounded-md p-8 flex justify-between text-white"
+          class="bg-blue-600 rounded-md p-6 flex justify-between gap-4 text-white md:p-8"
         >
           <section class="flex flex-col gap-4">
-            <h1 class="text-3xl font-bold">
+            <h1 class="text-2xl font-bold md:text-3xl">
               <span id="cityName"></span>
               <span id="localtime">(2024-04-23)</span>
             </h1>
-            <p class="text-xl"><span id="temperature"></span>&deg;C</p>
-            <p id="wind" class="text-xl"></p>
-            <p id="humidity" class="text-xl"></p>
+            <p class="text-lg md:text-xl">
+              <span id="temperature"></span>&deg;C
+            </p>
+            <p id="wind" class="text-lg md:text-xl"></p>
+            <p id="humidity" class="text-lg md:text-xl"></p>
           </section>
-          <section class="">
-            <div class="flex flex-col items-center gap-4">
-              <img
-                class="w-30"
-                src="../images/rain_6206031.png"
-                alt="weather-iamge"
-              />
-              <p class="text-xl">Light Rain</p>
+          <section>
+            <div class="flex flex-col items-center gap-2 md:gap-4">
+              <img id="weatherImg" class="w-18 max-w-full md:w-24 lg:w-30" />
+              <p id="weatherText" class="text-lg md:text-xl"></p>
             </div>
           </section>
         </article>
         <!-- 5 day ForeCast -->
-        <article class="flex flex-col gap-6">
-          <h1 class="text-3xl font-bold">5-Day Forecast</h1>
-          <section class="text-white mt-4 text-xl flex gap-6 overflow-x-auto">
-            <article
-              class="bg-gray-600 w-44 rounded text-left p-4 flex flex-col gap-4 flex-shrink-0"
-            >
-              <div class="flex flex-col gap-4">
-                <h3>(2024-04-24)</h3>
-                <i class="text-2xl pl-4 fa-solid fa-cloud"></i>
-              </div>
-              <div class="flex flex-col gap-2">
-                <p>Temp: 6.0°C</p>
-                <p>Wind: 2.7 x 6.0°</p>
-                <p>Monday, 9th</p>
-              </div>
-            </article>
-            <article
-              class="bg-gray-600 w-44 rounded text-left p-4 flex flex-col gap-4 flex-shrink-0"
-            >
-              <div class="flex flex-col gap-4">
-                <h3>(2024-04-24)</h3>
-                <i class="text-2xl pl-4 fa-solid fa-cloud"></i>
-              </div>
-              <div class="flex flex-col gap-2">
-                <p>Temp: 6.0°C</p>
-                <p>Wind: 2.7 x 6.0°</p>
-                <p>Monday, 9th</p>
-              </div>
-            </article>
-            <article
-              class="bg-gray-600 w-44 rounded text-left p-4 flex flex-col gap-4 flex-shrink-0"
-            >
-              <div class="flex flex-col gap-4">
-                <h3>(2024-04-24)</h3>
-                <i class="text-2xl pl-4 fa-solid fa-cloud"></i>
-              </div>
-              <div class="flex flex-col gap-2">
-                <p>Temp: 6.0°C</p>
-                <p>Wind: 2.7 x 6.0°</p>
-                <p>Monday, 9th</p>
-              </div>
-            </article>
-            <article
-              class="bg-gray-600 w-44 rounded text-left p-4 flex flex-col gap-4 flex-shrink-0"
-            >
-              <div class="flex flex-col gap-4">
-                <h3>(2024-04-24)</h3>
-                <i class="text-2xl pl-4 fa-solid fa-cloud"></i>
-              </div>
-              <div class="flex flex-col gap-2">
-                <p>Temp: 6.0°C</p>
-                <p>Wind: 2.7 x 6.0°</p>
-                <p>Monday, 9th</p>
-              </div>
-            </article>
-            <article
-              class="bg-gray-600 w-44 rounded text-left p-4 flex flex-col gap-4 flex-shrink-0"
-            >
-              <div class="flex flex-col gap-4">
-                <h3>(2024-04-24)</h3>
-                <i class="text-2xl pl-4 fa-solid fa-cloud"></i>
-              </div>
-              <div class="flex flex-col gap-2">
-                <p>Temp: 6.0°C</p>
-                <p>Wind: 2.7 x 6.0°</p>
-                <p>Monday, 9th</p>
-              </div>
-            </article>
-          </section>
+        <article class="flex flex-col gap-4 md:gap-8">
+          <h1 class="text-2xl font-bold md:text-3xl">5-Day Forecast</h1>
+          <section
+            id="forecastContainer"
+            class="text-white text-lg flex gap-4 overflow-x-auto md:gap-6 md:text-xl"
+          ></section>
         </article>
       </section>
     </main>
